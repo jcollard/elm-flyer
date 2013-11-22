@@ -31,13 +31,10 @@ scene state =
   let background = 
         Collage.filled black <| 
         Collage.rect state.displayWidth state.displayHeight
-      details = asText state
       flyer = drawFlyer state.flyer
   in
-   flow down [
   Collage.collage (round state.displayWidth) (round state.displayHeight)
-                  [background, flyer],
-  details]
+                  [background, flyer]
 
 initialState = { flyer = startFlyer
                , animation = Nothing
